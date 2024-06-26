@@ -39,18 +39,18 @@ public class CartController {
 		this.cartService = cartService;
 	}
 	
-	@GetMapping("cart/getCartById")
-	public String getCartId(Model model){
-		User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		String emailId = user.getUsername();
-		Customer customer = customerService.getCustomerByemailId(emailId);
-		model.addAttribute("cartId", customer.getCart().getCartId());
-		return "cart";
-	}
-	
-	@GetMapping("/cart/getCart/{cartId}")
-	public @ResponseBody Cart getCartItems(@PathVariable("cartId") String cartId){
-		return cartService.getCartByCartId(cartId);
-	}
+//	@GetMapping("cart/getCartById")
+//	public String getCartId(Model model){
+//		User user = (User)SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+//		String emailId = user.getUsername();
+//		Customer customer = customerService.getCustomerByemailId(emailId);
+//		model.addAttribute("cartId", customer.getCart().getCartId());
+//		return "cart";
+//	}
+//
+//	@GetMapping("/cart/getCart/{cartId}")
+//	public @ResponseBody Cart getCartItems(@PathVariable("cartId") String cartId){
+//		return cartService.getCartByCartId(cartId);
+//	}
 	
 }
